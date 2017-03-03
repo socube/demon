@@ -222,7 +222,7 @@ public class ZkDistributedLock {
                         id = null; // 异常情况，重新创建一个
                     } else {
                         // 对节点进行排序
-                        SortedSet<String> sortedNames = new TreeSet<>();
+                        SortedSet<String> sortedNames = new TreeSet();
                         for (String name : names) {
                             sortedNames.add(name);
                         }

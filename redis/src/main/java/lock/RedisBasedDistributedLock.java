@@ -1,6 +1,5 @@
 package lock;
 
-import comyouxinpai.changzheng.commons.cache.redis.RedisManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +16,7 @@ public class RedisBasedDistributedLock extends AbstractLock {
 
     public static final Logger logger = LoggerFactory.getLogger(RedisBasedDistributedLock.class);
 
-    private RedisManager redisManager;
+    //private RedisManager redisManager;
 
     // 锁的名字
     protected String lockKey;
@@ -29,11 +28,11 @@ public class RedisBasedDistributedLock extends AbstractLock {
     private String stringOfLockExpireTime;
 
 
-    public RedisBasedDistributedLock(RedisManager redisManager, String lockKey, long lockExpires) throws IOException {
-        this.redisManager = redisManager;
-        this.lockKey = lockKey;
-        this.lockExpires = lockExpires;
-    }
+//    public RedisBasedDistributedLock(RedisManager redisManager, String lockKey, long lockExpires) throws IOException {
+//        this.redisManager = redisManager;
+//        this.lockKey = lockKey;
+//        this.lockExpires = lockExpires;
+//    }
 
     // 阻塞式获取锁的实现
     protected boolean lock(boolean useTimeout, long time, TimeUnit unit, boolean interrupt) throws InterruptedException {
@@ -54,32 +53,32 @@ public class RedisBasedDistributedLock extends AbstractLock {
             long lockExpireTime = localTimeMillis() + lockExpires + 1;//锁超时时间
             stringOfLockExpireTime = String.valueOf(lockExpireTime);
 
-            if (redisManager.setnx(lockKey, stringOfLockExpireTime) == 1) { // 获取到锁
-                logger.info("lock成功获取锁 lockKey:{},失效时间:{},阻塞时间:{}", lockKey, lockExpires, time);
-                locked = true;
-                setExclusiveOwnerThread(Thread.currentThread());
-                return true;
-            }
+//            if (redisManager.setnx(lockKey, stringOfLockExpireTime) == 1) { // 获取到锁
+//                logger.info("lock成功获取锁 lockKey:{},失效时间:{},阻塞时间:{}", lockKey, lockExpires, time);
+//                locked = true;
+//                setExclusiveOwnerThread(Thread.currentThread());
+//                return true;
+//            }
 
-            String value = redisManager.get(lockKey);
-            if (value != null && isTimeExpired(value)) { // lock is expired
-
-                logger.info("锁超时 lockKey:{},失效时间:{},阻塞时间:{}", lockKey, lockExpires, time);
-                String oldValue = redisManager.getSet(lockKey, stringOfLockExpireTime); //假设多个线程(非单jvm)同时走到这里  getset is atomic
-                /**
-                 * 但是走到这里时每个线程拿到的oldValue肯定不可能一样(因为getset是原子性的)
-                 加入拿到的oldValue依然是expired的，那么就说明拿到锁了
-
-                 * */
-                if (oldValue != null && isTimeExpired(oldValue)) {
-                    // TODO 成功获取到锁, 设置相关标识
-                    locked = true;
-                    setExclusiveOwnerThread(Thread.currentThread());
-                    return true;
-                }
-            } else {
-                // TODO lock is not expired, enter next loop retrying
-            }
+            //String value = redisManager.get(lockKey);
+//            if (value != null && isTimeExpired(value)) { // lock is expired
+//
+//                logger.info("锁超时 lockKey:{},失效时间:{},阻塞时间:{}", lockKey, lockExpires, time);
+//                String oldValue = redisManager.getSet(lockKey, stringOfLockExpireTime); //假设多个线程(非单jvm)同时走到这里  getset is atomic
+//                /**
+//                 * 但是走到这里时每个线程拿到的oldValue肯定不可能一样(因为getset是原子性的)
+//                 加入拿到的oldValue依然是expired的，那么就说明拿到锁了
+//
+//                 * */
+//                if (oldValue != null && isTimeExpired(oldValue)) {
+//                    // TODO 成功获取到锁, 设置相关标识
+//                    locked = true;
+//                    setExclusiveOwnerThread(Thread.currentThread());
+//                    return true;
+//                }
+//            } else {
+//                // TODO lock is not expired, enter next loop retrying
+//            }
         }
         return false;
     }
@@ -90,35 +89,35 @@ public class RedisBasedDistributedLock extends AbstractLock {
 
         stringOfLockExpireTime = String.valueOf(lockExpireTime);
 
-        if (redisManager.setnx(lockKey, stringOfLockExpireTime) == 1) { // 获取到锁
+//        if (redisManager.setnx(lockKey, stringOfLockExpireTime) == 1) { // 获取到锁
+//
+//            logger.info("tryLock获取成功锁 lockKey:{}", lockKey);
+//            // TODO 成功获取到锁, 设置相关标识
+//            locked = true;
+//            setExclusiveOwnerThread(Thread.currentThread());
+//            return true;
+//        }
 
-            logger.info("tryLock获取成功锁 lockKey:{}", lockKey);
-            // TODO 成功获取到锁, 设置相关标识
-            locked = true;
-            setExclusiveOwnerThread(Thread.currentThread());
-            return true;
-        }
-
-        String value = redisManager.get(lockKey);
-
-        if (value != null && isTimeExpired(value)) { // lock is expired
-
-            logger.info("锁超时 lockKey:{}", lockKey);
-
-            // 假设多个线程(非单jvm)同时走到这里
-            String oldValue = redisManager.getSet(lockKey, stringOfLockExpireTime); // getset is atomic
-            // 但是走到这里时每个线程拿到的oldValue肯定不可能一样(因为getset是原子性的)
-            // 假如拿到的oldValue依然是expired的，那么就说明拿到锁了
-            if (oldValue != null && isTimeExpired(oldValue)) {
-                logger.info("重新获取到锁 lockKey:{}", lockKey);
-                // TODO 成功获取到锁, 设置相关标识
-                locked = true;
-                setExclusiveOwnerThread(Thread.currentThread());  //TODO 没有意义 删除
-                return true;
-            }
-        } else {
-            // TODO lock is not expired, enter next loop retrying
-        }
+//        String value = redisManager.get(lockKey);
+//
+//        if (value != null && isTimeExpired(value)) { // lock is expired
+//
+//            logger.info("锁超时 lockKey:{}", lockKey);
+//
+//            // 假设多个线程(非单jvm)同时走到这里
+//            String oldValue = redisManager.getSet(lockKey, stringOfLockExpireTime); // getset is atomic
+//            // 但是走到这里时每个线程拿到的oldValue肯定不可能一样(因为getset是原子性的)
+//            // 假如拿到的oldValue依然是expired的，那么就说明拿到锁了
+//            if (oldValue != null && isTimeExpired(oldValue)) {
+//                logger.info("重新获取到锁 lockKey:{}", lockKey);
+//                // TODO 成功获取到锁, 设置相关标识
+//                locked = true;
+//                setExclusiveOwnerThread(Thread.currentThread());  //TODO 没有意义 删除
+//                return true;
+//            }
+//        } else {
+//            // TODO lock is not expired, enter next loop retrying
+//        }
         logger.info("获取锁失败 lockKey:{}", lockKey);
         return false;
     }
@@ -133,26 +132,27 @@ public class RedisBasedDistributedLock extends AbstractLock {
         if (locked) {
             return true;
         } else {
-            String value = redisManager.get(lockKey);
+           // String value = redisManager.get(lockKey);
             // TODO 这里其实是有问题的, 想:当get方法返回value后, 假设这个value已经是过期的了,
             // 而就在这瞬间, 另一个节点set了value, 这时锁是被别的线程(节点持有), 而接下来的判断
             // 是检测不出这种情况的.不过这个问题应该不会导致其它的问题出现, 因为这个方法的目的本来就
             // 不是同步控制, 它只是一种锁状态的报告.
-            return !isTimeExpired(value);
+            //return !isTimeExpired(value);
         }
+        return false;
     }
 
     @Override
     protected void unlock0() {
 
-        String value = redisManager.get(lockKey); // TODO 判断锁是否过期
+       // String value = redisManager.get(lockKey); // TODO 判断锁是否过期
 
-        if (!isTimeExpired(value) && stringOfLockExpireTime.equals(value)) { //锁没有超时 释放锁必须持有锁
-            doUnlock();
-            logger.info("成功释放锁 lockKey:{}", lockKey);
-        } else {
-            logger.info("释放锁失败 当前线程没有持有锁 lockKey:{}", lockKey);
-        }
+//        if (!isTimeExpired(value) && stringOfLockExpireTime.equals(value)) { //锁没有超时 释放锁必须持有锁
+//            doUnlock();
+//            logger.info("成功释放锁 lockKey:{}", lockKey);
+//        } else {
+//            logger.info("释放锁失败 当前线程没有持有锁 lockKey:{}", lockKey);
+//        }
     }
 
     public void release() {
@@ -160,7 +160,7 @@ public class RedisBasedDistributedLock extends AbstractLock {
     }
 
     private void doUnlock() {
-        redisManager.del(lockKey);
+        //redisManager.del(lockKey);
     }
 
     private void checkInterruption() throws InterruptedException {

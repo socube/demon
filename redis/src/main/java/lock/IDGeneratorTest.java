@@ -1,6 +1,6 @@
 package lock;
 
-import comyouxinpai.changzheng.commons.cache.redis.RedisManager;
+//import comyouxinpai.changzheng.commons.cache.redis.RedisManager;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -21,27 +21,27 @@ public class IDGeneratorTest {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        RedisManager redisManager =RedisManager.getInstance();
+        //RedisManager redisManager =RedisManager.getInstance();
 
-        Lock lock1 = new RedisBasedDistributedLock(redisManager, LOCK_KEY, LOCK_EXPIRE);
-        IDGenerator g1 = new IDGenerator(lock1);
-        IDConsumeTask consume1 = new IDConsumeTask(g1, "consume0");
-
-        Lock lock2 = new RedisBasedDistributedLock(redisManager, LOCK_KEY, LOCK_EXPIRE);
-        IDGenerator g2 = new IDGenerator(lock2);
-        IDConsumeTask consume2 = new IDConsumeTask(g2, "consume1");
-
-        Thread t1 = new Thread(consume1);
-        Thread t2 = new Thread(consume2);
-        t1.start();
-        t2.start();
-
-        Thread.sleep(20 * 1000); //让两个线程跑20秒
-
-        IDConsumeTask.stopAll();
-
-        t1.join();
-        t2.join();
+//        Lock lock1 = new RedisBasedDistributedLock(redisManager, LOCK_KEY, LOCK_EXPIRE);
+//        IDGenerator g1 = new IDGenerator(lock1);
+//        IDConsumeTask consume1 = new IDConsumeTask(g1, "consume0");
+//
+//        Lock lock2 = new RedisBasedDistributedLock(redisManager, LOCK_KEY, LOCK_EXPIRE);
+//        IDGenerator g2 = new IDGenerator(lock2);
+//        IDConsumeTask consume2 = new IDConsumeTask(g2, "consume1");
+//
+//        Thread t1 = new Thread(consume1);
+//        Thread t2 = new Thread(consume2);
+//        t1.start();
+//        t2.start();
+//
+//        Thread.sleep(20 * 1000); //让两个线程跑20秒
+//
+//        IDConsumeTask.stopAll();
+//
+//        t1.join();
+//        t2.join();
     }
 
     static String time() {
