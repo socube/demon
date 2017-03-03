@@ -22,14 +22,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="com.mq.service" />
         <module name="netty" />
         <module name="redis" />
         <module name="web" />
       </profile>
+      <profile default="false" name="Annotation profile for com.mq.service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="com.mq.service" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
-      <module name="com.mq.service" target="1.5" />
+      <module name="com.mq.service" target="1.6" />
       <module name="demon" target="1.5" />
       <module name="netty" target="1.5" />
       <module name="redis" target="1.5" />
