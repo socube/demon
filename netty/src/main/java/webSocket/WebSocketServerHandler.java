@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-//import static io.netty.handler.codec.http.HttpHeaderNames.HOST;
+import static io.netty.handler.codec.http.HttpHeaderNames.HOST;
 import static io.netty.handler.codec.http.HttpMethod.GET;
 import static io.netty.handler.codec.http.HttpResponseStatus.*;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
@@ -49,6 +49,8 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
 
     private WebSocketServerHandshaker handshaker;
 
+
+
     @Override
     public void messageReceived(ChannelHandlerContext ctx, Object msg) {
         if (msg instanceof FullHttpRequest) {
@@ -66,24 +68,24 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
     private void handleHttpRequest(ChannelHandlerContext ctx, FullHttpRequest req) {
         // Handle a bad request.
 
-        if (!req.getDecoderResult().isSuccess()) {
+        if (!req.decoderResult().isSuccess()) {
             sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HTTP_1_1, BAD_REQUEST));
             return;
         }
 
         // Allow only GET methods.
 
-        if (req.getMethod() != GET) {
+        if (req.method() != GET) {
             sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HTTP_1_1, FORBIDDEN));
             return;
         }
 
-        if ("/favicon.ico".equals(req.getUri()) || ("/".equals(req.getUri()))) {
+        if ("/favicon.ico".equals(req.uri()) || ("/".equals(req.uri()))) {
             sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HTTP_1_1, NOT_FOUND));
             return;
         }
 
-        QueryStringDecoder queryStringDecoder = new QueryStringDecoder(req.getUri());
+        QueryStringDecoder queryStringDecoder = new QueryStringDecoder(req.uri());
         Map<String, List<String>> parameters = queryStringDecoder.parameters();
 
         if (parameters.size() == 0 || !parameters.containsKey(HTTP_REQUEST_STRING)) {
@@ -163,16 +165,15 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
     }
 
     private static void sendHttpResponse(ChannelHandlerContext ctx, FullHttpRequest req, FullHttpResponse res) {
-        if (res.getStatus().code() != 200) {
-            ByteBuf buf = Unpooled.copiedBuffer(res.getStatus().toString(), CharsetUtil.UTF_8);
+        if (res.status().code() != 200) {
+            ByteBuf buf = Unpooled.copiedBuffer(res.status().toString(), CharsetUtil.UTF_8);
             res.content().writeBytes(buf);
             buf.release();
             HttpHeaderUtil.setContentLength(res, res.content().readableBytes());
-
         }
 
         ChannelFuture f = ctx.channel().writeAndFlush(res);
-        if (!HttpHeaderUtil.isKeepAlive(req) || res.getStatus().code() != 200) {
+        if (!HttpHeaderUtil.isKeepAlive(req) || res.status().code() != 200) {
             f.addListener(ChannelFutureListener.CLOSE);
         }
     }
@@ -197,13 +198,10 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
     }
 
     private static String getWebSocketLocation(FullHttpRequest req) {
+
         String location = req.headers().get(HOST) + WEBSOCKET_PATH;
         return "ws://" + location;
     }
 
 
-    @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object o) throws Exception {
-
-    }
 }
