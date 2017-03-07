@@ -11,6 +11,8 @@ import java.util.Iterator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.applet.Main;
+
 /**
  * @Description
  * @Author xuedong.wang
@@ -186,6 +188,17 @@ public class TimeServer {
 
     private long time() {
         return System.currentTimeMillis();
+    }
+
+
+    public static void main(String[] args) {
+
+        TimeServer server = new TimeServer();
+        try {
+            server.start(9999);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
