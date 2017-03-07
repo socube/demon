@@ -89,14 +89,14 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
         Map<String, List<String>> parameters = queryStringDecoder.parameters();
 
         if (parameters.size() == 0 || !parameters.containsKey(HTTP_REQUEST_STRING)) {
-            System.err.printf(HTTP_REQUEST_STRING + "参数不可缺省");
+            System.err.println(HTTP_REQUEST_STRING + "参数不可缺省");
             sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HTTP_1_1, NOT_FOUND));
             return;
         }
 
         client = RequestService.clientRegister(parameters.get(HTTP_REQUEST_STRING).get(0));
         if (client.getRoomId() == 0) {
-            System.err.printf("房间号不可缺省");
+            System.err.println("房间号不可缺省");
             sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HTTP_1_1, NOT_FOUND));
             return;
         }
