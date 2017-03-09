@@ -67,7 +67,7 @@ public class ConsumerDemo {
     }
 
     public static void main(String[] arg) {
-        String[] args = {"172.168.63.221:2188", "group-1", "page_visits", "12"};
+        String[] args = {"192.168.201.218:2181", "group-1", "page_visits", "12"};
         String zooKeeper = args[0];
         String groupId = args[1];
         String topic = args[2];

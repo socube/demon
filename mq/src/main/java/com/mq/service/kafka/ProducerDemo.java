@@ -22,7 +22,7 @@ public class ProducerDemo {
 
         // 设置配置属性
         Properties props = new Properties();
-        props.put("metadata.broker.list", "172.168.63.221:9092,172.168.63.233:9092,172.168.63.234:9092");
+        props.put("metadata.broker.list", "192.168.201.227:9092,192.168.201.228:9092,192.168.201.229:9092");
         props.put("serializer.class", "kafka.serializer.StringEncoder");
         // key.serializer.class默认为serializer.class
         props.put("key.serializer.class", "kafka.serializer.StringEncoder");
