@@ -17,6 +17,8 @@ import kafka.producer.ProducerConfig;
 public class ProducerDemo {
 
     public static void main(String[] args) {
+
+
         Random rnd = new Random();
         int events = 100;
 
