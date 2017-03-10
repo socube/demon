@@ -34,6 +34,7 @@ public class ProducerDemo {
         props.put("request.required.acks", "1");
         ProducerConfig config = new ProducerConfig(props);
 
+
         // 创建producer
         Producer<String, String> producer = new Producer<String, String>(config);
         // 产生并发送消息

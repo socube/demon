@@ -13,7 +13,7 @@ import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
 
 /**
- * @Description  消费者
+ * @Description 消费者
  * @Author xuedong.wang
  * @Date 17/3/3.
  */
@@ -82,5 +82,7 @@ public class ConsumerDemo {
 
         }
         demo.shutdown();
+
+
     }
 }
