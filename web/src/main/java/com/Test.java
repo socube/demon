@@ -1,9 +1,8 @@
 package com;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.spi.Spi;
+
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -14,11 +13,8 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Map<String,String> map = new HashMap<String, String>();
 
-        Map<String,String> currentMap =new ConcurrentHashMap<String, String>();
-
-
+        ServiceLoader.load(Spi.class);
 
     }
 }
