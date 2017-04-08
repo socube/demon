@@ -1,11 +1,13 @@
 package com.dubbo.api.entity;
 
+import java.io.Serializable;
+
 /**
  * @Description
  * @Author xuedong.wang
  * @Date 17/4/8.
  */
-public class User {
+public class User implements Serializable{
 
     private Integer age;
 

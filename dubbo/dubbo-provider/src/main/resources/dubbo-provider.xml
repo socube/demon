@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="dubbo-provider"/>
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry  protocol="zookeeper" address="192.168.201.219:2181,192.168.201.220:2181,192.168.201.218:2181"/>
+
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.dubbo.api.UserService" ref="userService"/>
+
+    <!--接口调用的统计，例如访问量，耗时等，目前先不用配置-->
+    <!--<dubbo:monitor protocol="registry"/> -->
+
+    <!--暴露的服务，每个接口一个服务必选interface和ref
+             重要参数：
+        timeout：远程服务调用超时时间(毫秒)，超时则认为调用失败，根据业务需要设置超时时间
+        retries：远程服务调用重试次数，不包括第一次调用，不需要重试请设为0,非幂等性操作不要重试，否则会造成重复提交
+        connections：对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数
+        loadbalance：负载均衡策略，可选值：random,roundrobin,leastactive，分别表示：随机，轮循，最少活跃调用
+        async：是否缺省异步执行，不可靠异步，只是忽略返回值，不阻塞执行线程
+        cluster:集群方式，可选：failover/failfast/failsafe/failback/forking
+    -->
+
+    <!-- 和本地bean一样实现服务
+    <bean id="demoService" class="com.dubbo.provider.impl.UserServiceImpl" />
+    -->
+</beans>

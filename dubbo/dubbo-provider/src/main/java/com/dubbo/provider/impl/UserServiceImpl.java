@@ -3,6 +3,7 @@ package com.dubbo.provider.impl;
 import com.dubbo.api.UserService;
 import com.dubbo.api.entity.User;
 import com.sun.org.apache.bcel.internal.generic.NEW;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * @Author xuedong.wang
  * @Date 17/4/8.
  */
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
 
