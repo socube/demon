@@ -17,9 +17,21 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="dubbo-api" />
+        <module name="dubbo-consumer" />
+        <module name="dubbo-provider" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
       <module name="dubbo" target="1.5" />
+      <module name="dubbo-api" target="1.5" />
+      <module name="dubbo-consumer" target="1.5" />
+      <module name="dubbo-provider" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
