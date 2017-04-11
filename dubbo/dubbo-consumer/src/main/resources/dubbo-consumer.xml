@@ -15,4 +15,6 @@
     <dubbo:registry  protocol="zookeeper"  address="192.168.201.219:2181,192.168.201.220:2181,192.168.201.218:2181"/>
     <!-- 生成远程服务代理，可以和本地bean一样使用userService -->
     <dubbo:reference id="userService" interface="com.dubbo.api.UserService"/>
+
+    <dubbo:reference id="pigService" group="pig" interface="com.dubbo.api.AnimalService"/>
 </beans>

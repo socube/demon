@@ -1,5 +1,6 @@
 package com.dubbo.consumer.web;
 
+import com.dubbo.api.AnimalService;
 import com.dubbo.api.UserService;
 import com.dubbo.api.entity.User;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,9 @@ public class ConsumerController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private AnimalService pigService;
 
     @RequestMapping("getUsers")
     public List<User> getUses() {
