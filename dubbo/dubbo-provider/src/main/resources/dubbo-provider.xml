@@ -14,7 +14,7 @@
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.dubbo.api.UserService" ref="userService"/>
+    <dubbo:service interface="com.dubbo.api.UserService" ref="userService" />
 
     <!--接口调用的统计，例如访问量，耗时等，目前先不用配置-->
     <!--<dubbo:monitor protocol="registry"/> -->
