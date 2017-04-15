@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/dubbo-api" />
     <file type="web" url="file://$PROJECT_DIR$/dubbo-consumer" />
     <file type="web" url="file://$PROJECT_DIR$/dubbo-provider" />
+    <file type="web" url="file://$PROJECT_DIR$/dubbo-springboot" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

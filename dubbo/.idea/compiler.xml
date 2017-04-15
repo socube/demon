@@ -25,6 +25,12 @@
         <module name="dubbo-api" />
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
+      </profile>
+      <profile default="false" name="Annotation profile for dubbo-springboot" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="dubbo-springboot" />
       </profile>
     </annotationProcessing>
@@ -33,7 +39,7 @@
       <module name="dubbo-api" target="1.5" />
       <module name="dubbo-consumer" target="1.5" />
       <module name="dubbo-provider" target="1.5" />
-      <module name="dubbo-springboot" target="1.5" />
+      <module name="dubbo-springboot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
