@@ -1,7 +1,8 @@
 package com.dubbo.springboot.server;
 
 
-import org.mvnsearch.spring.boot.dubbo.EnableDubboConfiguration;
+
+import com.dubbo.springboot.EnableDubboConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**

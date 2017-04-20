@@ -1,10 +1,11 @@
 package com.dubbo.springboot;
 
 import com.alibaba.dubbo.config.annotation.DubboService;
-import org.mvnsearch.spring.boot.dubbo.listener.ConsumerInvokeStaticsFilter;
-import org.mvnsearch.spring.boot.dubbo.listener.ConsumerSubscribeListener;
-import org.mvnsearch.spring.boot.dubbo.listener.ProviderExportListener;
-import org.mvnsearch.spring.boot.dubbo.listener.ProviderInvokeStaticsFilter;
+
+import com.dubbo.springboot.listener.ConsumerInvokeStaticsFilter;
+import com.dubbo.springboot.listener.ConsumerSubscribeListener;
+import com.dubbo.springboot.listener.ProviderExportListener;
+import com.dubbo.springboot.listener.ProviderInvokeStaticsFilter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.AbstractEndpoint;
@@ -24,7 +25,7 @@ import java.util.Set;
  * @Author xuedong.wang
  * @Date 17/4/16.
  */
-public class DubboEndpoint t extends AbstractEndpoint implements ApplicationContextAware{
+public class DubboEndpoint  extends AbstractEndpoint implements ApplicationContextAware{
     private DubboProperties dubboProperties;
     private ApplicationContext applicationContext;
 

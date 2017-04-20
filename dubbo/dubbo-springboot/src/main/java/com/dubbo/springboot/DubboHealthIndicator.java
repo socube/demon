@@ -1,7 +1,8 @@
 package com.dubbo.springboot;
 
 import com.alibaba.dubbo.rpc.service.EchoService;
-import org.mvnsearch.spring.boot.dubbo.listener.ConsumerSubscribeListener;
+
+import com.dubbo.springboot.listener.ConsumerSubscribeListener;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.actuate.health.AbstractHealthIndicator;
 import org.springframework.boot.actuate.health.Health;
@@ -35,5 +36,5 @@ public class DubboHealthIndicator extends AbstractHealthIndicator implements App
     }
 
 }
-    Contact GitHub API Training Shop Blog About
+
 

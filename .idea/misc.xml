@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/dubbo/dubbo-consumer" />
     <file type="web" url="file://$PROJECT_DIR$/dubbo/dubbo-provider" />
+    <file type="web" url="file://$PROJECT_DIR$/dubbo/dubbo-springboot" />
     <file type="web" url="file://$PROJECT_DIR$/web" />
   </component>
   <component name="MavenProjectsManager">
