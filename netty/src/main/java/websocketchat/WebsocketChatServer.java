@@ -20,6 +20,15 @@ public class WebsocketChatServer {
         this.port = port;
     }
 
+    /**
+     * 1、NioEventLoopGroup 是用来处理I/O操作的线程池，Netty对 EventLoopGroup 接口针对不同的传输协议提供了不同的实现。在本例子中，需要实例化两个NioEventLoopGroup，通常第一个称为“boss”，用来accept客户端连接，另一个称为“worker”，处理客户端数据的读写操作。
+     * 2、ServerBootstrap 是启动服务的辅助类，有关socket的参数可以通过ServerBootstrap进行设置。
+     * 3、这里指定NioServerSocketChannel类初始化channel用来接受客户端请求。
+     * 4、通常会为新SocketChannel通过添加一些handler，来设置ChannelPipeline。ChannelInitializer 是一个特殊的handler，其中initChannel方法可以为SocketChannel 的pipeline添加指定handler。
+     * 5、通过绑定端口8080，就可以对外提供服务了。
+     *
+     * @throws Exception
+     */
     public void run() throws Exception {
 
         EventLoopGroup bossGroup = new NioEventLoopGroup(); // (1)
