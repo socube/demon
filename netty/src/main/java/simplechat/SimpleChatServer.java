@@ -1,4 +1,4 @@
-package simple;
+package simplechat;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
