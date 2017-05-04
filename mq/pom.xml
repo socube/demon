@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com.mq.service</artifactId>
+    <artifactId>mq</artifactId>
     <build>
         <plugins>
             <plugin>
