@@ -20,7 +20,7 @@ public class ProducerDemo {
 
 
         Random rnd = new Random();
-        int events = 100;
+        int events = 100000;
 
         // 设置配置属性
         Properties props = new Properties();
@@ -44,7 +44,7 @@ public class ProducerDemo {
         for (long i = 0; i < events; i++) {
             long runtime = new Date().getTime();
             String ip = "192.168.2." + i;//rnd.nextInt(255);
-            String msg =""+ runtime + ",www.example.com," + ip;
+            String msg ="Message"+ runtime + ",www.example.com," + ip;
             //如果topic不存在，则会自动创建，默认replication-factor为1，partitions为0
             KeyedMessage<String, String> data = new KeyedMessage<String, String>(
                     "page_visits", "92.168.201.227", msg);

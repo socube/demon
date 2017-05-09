@@ -67,7 +67,7 @@ public class ConsumerDemo {
     }
 
     public static void main(String[] arg) {
-        String[] args = {"192.168.201.227:2181", "group-1", "page_visits", "12"};
+        String[] args = {"192.168.201.227:2181", "group-1", "page_visits", "1"};
         String zooKeeper = args[0];
         String groupId = args[1];
         String topic = args[2];
@@ -77,7 +77,7 @@ public class ConsumerDemo {
         demo.run(threads);
 
         try {
-            Thread.sleep(10000);
+            Thread.sleep(100000);
         } catch (InterruptedException ie) {
 
         }
