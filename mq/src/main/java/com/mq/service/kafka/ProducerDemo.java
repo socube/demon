@@ -47,7 +47,7 @@ public class ProducerDemo {
             String msg ="Message"+ runtime + ",www.example.com," + ip;
             //如果topic不存在，则会自动创建，默认replication-factor为1，partitions为0
             KeyedMessage<String, String> data = new KeyedMessage<String, String>(
-                    "page_visits4", "192.168.201.227", msg);
+                    "page_visits", "192.168.201.227", msg);
             producer.send(data);
         }
         System.out.println("耗时:" + (System.currentTimeMillis() - start));
