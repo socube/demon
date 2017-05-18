@@ -26,6 +26,7 @@
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
         <module name="redis" />
+        <module name="storm" />
         <module name="web" />
       </profile>
       <profile default="false" name="Annotation profile for com.mq.service" enabled="true">
@@ -60,6 +61,7 @@
       <module name="dubbo-springboot" target="1.8" />
       <module name="netty" target="1.7" />
       <module name="redis" target="1.5" />
+      <module name="storm" target="1.5" />
       <module name="web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
