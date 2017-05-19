@@ -1,5 +1,17 @@
 package com.storm.dataopttopology;
 
+import com.storm.dataopttopology.bolt.FilterBolt;
+import com.storm.dataopttopology.bolt.MetaBolt;
+import com.storm.dataopttopology.bolt.MysqlBolt;
+import com.storm.dataopttopology.spout.MetaSpout;
+import org.apache.storm.Config;
+import org.apache.storm.LocalCluster;
+import org.apache.storm.StormSubmitter;
+import org.apache.storm.generated.AlreadyAliveException;
+import org.apache.storm.generated.AuthorizationException;
+import org.apache.storm.generated.InvalidTopologyException;
+import org.apache.storm.topology.TopologyBuilder;
+
 /**
  * @Description
  * @Author xuedong.wang
@@ -37,8 +49,12 @@ public class Topology {
 
         if (args != null && args.length > 0) {
             config.setNumWorkers(1);
-            StormSubmitter.submitTopology(args[0], config,
-                    builder.createTopology());
+            try {
+                StormSubmitter.submitTopology(args[0], config,
+                        builder.createTopology());
+            } catch (AuthorizationException e) {
+                e.printStackTrace();
+            }
         } else {
             // 这里是本地模式下运行的启动代码。
             config.setMaxTaskParallelism(1);

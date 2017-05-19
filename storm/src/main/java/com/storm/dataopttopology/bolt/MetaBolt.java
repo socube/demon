@@ -1,11 +1,16 @@
 package com.storm.dataopttopology.bolt;
 
+import com.storm.dataopttopology.util.ConfCheck;
+import com.storm.dataopttopology.util.MacroDef;
+import com.storm.dataopttopology.xml.MetaXml;
+import com.taobao.metamorphosis.Message;
 import com.taobao.metamorphosis.client.MessageSessionFactory;
 import com.taobao.metamorphosis.client.MetaClientConfig;
 import com.taobao.metamorphosis.client.MetaMessageSessionFactory;
 import com.taobao.metamorphosis.client.producer.MessageProducer;
 import com.taobao.metamorphosis.client.producer.SendResult;
 import com.taobao.metamorphosis.exception.MetaClientException;
+import com.taobao.metamorphosis.utils.ZkUtils;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
@@ -147,7 +152,7 @@ public class MetaBolt implements IRichBolt {
         // 读取接收Topic
         this.Topic = MetaXml.MetaTopic;
         // 获取连接zk配置(metaq)
-        ZKConfig zkconf = new ZKConfig();
+        ZkUtils.ZKConfig zkconf = new ZkUtils.ZKConfig();
         // zkconf.zkConnect
         zkconf.zkConnect = MetaXml.MetaZkConnect;
         // zkconf.zkRoot = "/meta";

@@ -1,5 +1,9 @@
 package com.storm.dataopttopology.bolt;
 
+import com.storm.dataopttopology.util.ConfCheck;
+import com.storm.dataopttopology.util.MacroDef;
+import com.storm.dataopttopology.util.MysqlOpt;
+import com.storm.dataopttopology.xml.MysqlXml;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;

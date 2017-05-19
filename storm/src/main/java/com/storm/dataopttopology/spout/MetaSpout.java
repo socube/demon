@@ -1,11 +1,18 @@
 package com.storm.dataopttopology.spout;
 
 
+import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
+import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TimeUnit;
 
+import com.storm.dataopttopology.util.ConfCheck;
+import com.storm.dataopttopology.util.MacroDef;
+import com.storm.dataopttopology.util.MetaMessageWrapper;
+import com.storm.dataopttopology.util.StringScheme;
+import com.storm.dataopttopology.xml.SpoutXml;
 import com.taobao.gecko.core.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -249,7 +256,7 @@ public class MetaSpout implements IRichSpout {
 
                     // 数据发布操作
                     this.collector.emit(
-                            this.scheme.deserialize(message.getData()),
+                            this.scheme.deserialize(ByteBuffer.wrap(message.getData())),
                             message.getId());
                     Thread.sleep(100);
 
