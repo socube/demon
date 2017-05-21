@@ -9,5 +9,6 @@ public class WordCountTouple {
 
     public static void main(String[] args) {
 
+        System.currentTimeMillis();
     }
 }
