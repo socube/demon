@@ -1,6 +1,8 @@
 package com.storm.wordcount;
 
 import com.storm.dataopttopology.bolt.PrintBolt;
+import com.storm.wordcount.bolt.WordCountBolt;
+import com.storm.wordcount.bolt.WordNormalizerBolt;
 import com.storm.wordcount.spout.RandomSentenceSpout;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
@@ -27,6 +29,7 @@ public class WordCountTopology {
                 "RandomSentence");
         builder.setBolt("WordCount", new WordCountBolt(), 2).fieldsGrouping("WordNormalizer",
                 new AssembledChronology.Fields("word"));
+
         builder.setBolt("Print", new PrintBolt(), 1).shuffleGrouping(
                 "WordCount");
 
