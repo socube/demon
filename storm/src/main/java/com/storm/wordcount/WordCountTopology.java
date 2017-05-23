@@ -9,6 +9,7 @@ import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.shade.org.joda.time.chrono.AssembledChronology;
 import org.apache.storm.topology.TopologyBuilder;
+import org.apache.storm.tuple.Fields;
 
 /**
  * @Description
@@ -28,7 +29,7 @@ public class WordCountTopology {
         builder.setBolt("WordNormalizer", new WordNormalizerBolt(), 2).shuffleGrouping(
                 "RandomSentence");
         builder.setBolt("WordCount", new WordCountBolt(), 2).fieldsGrouping("WordNormalizer",
-                new AssembledChronology.Fields("word"));
+                new Fields("word"));// new AssembledChronology.Fields("word")
 
         builder.setBolt("Print", new PrintBolt(), 1).shuffleGrouping(
                 "WordCount");
