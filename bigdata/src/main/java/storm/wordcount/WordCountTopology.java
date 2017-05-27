@@ -1,9 +1,9 @@
 package storm.wordcount;
 
-import com.storm.dataopttopology.bolt.PrintBolt;
-import com.storm.wordcount.bolt.WordCountBolt;
-import com.storm.wordcount.bolt.WordNormalizerBolt;
-import com.storm.wordcount.spout.RandomSentenceSpout;
+import storm.dataopttopology.bolt.PrintBolt;
+import storm.wordcount.bolt.WordCountBolt;
+import storm.wordcount.bolt.WordNormalizerBolt;
+import storm.wordcount.spout.RandomSentenceSpout;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;

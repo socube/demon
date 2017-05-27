@@ -1,8 +1,8 @@
 package storm.dataopttopology.bolt;
 
-import com.storm.dataopttopology.util.ConfCheck;
-import com.storm.dataopttopology.util.MacroDef;
-import com.storm.dataopttopology.xml.MetaXml;
+import storm.dataopttopology.util.ConfCheck;
+import storm.dataopttopology.util.MacroDef;
+import storm.dataopttopology.xml.MetaXml;
 import com.taobao.metamorphosis.Message;
 import com.taobao.metamorphosis.client.MessageSessionFactory;
 import com.taobao.metamorphosis.client.MetaClientConfig;

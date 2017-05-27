@@ -1,9 +1,9 @@
 package storm.dataopttopology.util;
 
-import com.storm.dataopttopology.bolt.FilterBolt;
-import com.storm.dataopttopology.bolt.MetaBolt;
-import com.storm.dataopttopology.bolt.MysqlBolt;
-import com.storm.dataopttopology.spout.MetaSpout;
+import storm.dataopttopology.bolt.FilterBolt;
+import storm.dataopttopology.bolt.MetaBolt;
+import storm.dataopttopology.bolt.MysqlBolt;
+import storm.dataopttopology.spout.MetaSpout;
 
 import java.io.File;
 

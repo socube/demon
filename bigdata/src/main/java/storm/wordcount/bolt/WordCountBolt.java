@@ -1,6 +1,6 @@
 package storm.wordcount.bolt;
 
-import com.storm.wordcount.util.MapSort;
+import storm.wordcount.util.MapSort;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
