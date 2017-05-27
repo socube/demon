@@ -22,7 +22,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="bigdata" />
         <module name="dubbo-api" />
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
@@ -51,9 +50,16 @@
         <processorPath useClasspath="true" />
         <module name="dubbo-springboot" />
       </profile>
+      <profile default="false" name="Annotation profile for bigdata" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="bigdata" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
-      <module name="bigdata" target="1.5" />
+      <module name="bigdata" target="1.6" />
       <module name="com.mq.service" target="1.6" />
       <module name="demon" target="1.5" />
       <module name="dubbo" target="1.5" />

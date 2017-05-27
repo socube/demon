@@ -1,9 +1,6 @@
 package storm.dataopttopology;
 
-import com.storm.dataopttopology.bolt.FilterBolt;
-import com.storm.dataopttopology.bolt.MetaBolt;
-import com.storm.dataopttopology.bolt.MysqlBolt;
-import com.storm.dataopttopology.spout.MetaSpout;
+
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
@@ -11,6 +8,10 @@ import org.apache.storm.generated.AlreadyAliveException;
 import org.apache.storm.generated.AuthorizationException;
 import org.apache.storm.generated.InvalidTopologyException;
 import org.apache.storm.topology.TopologyBuilder;
+import storm.dataopttopology.bolt.FilterBolt;
+import storm.dataopttopology.bolt.MetaBolt;
+import storm.dataopttopology.bolt.MysqlBolt;
+import storm.dataopttopology.spout.MetaSpout;
 
 /**
  * @Description

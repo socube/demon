@@ -8,11 +8,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TimeUnit;
 
-import com.storm.dataopttopology.util.ConfCheck;
-import com.storm.dataopttopology.util.MacroDef;
-import com.storm.dataopttopology.util.MetaMessageWrapper;
-import com.storm.dataopttopology.util.StringScheme;
-import com.storm.dataopttopology.xml.SpoutXml;
+
 import com.taobao.gecko.core.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -32,6 +28,11 @@ import com.taobao.metamorphosis.client.consumer.MessageConsumer;
 import com.taobao.metamorphosis.client.consumer.MessageListener;
 
 import org.apache.storm.topology.IRichSpout;
+import storm.dataopttopology.util.ConfCheck;
+import storm.dataopttopology.util.MacroDef;
+import storm.dataopttopology.util.MetaMessageWrapper;
+import storm.dataopttopology.util.StringScheme;
+import storm.dataopttopology.xml.SpoutXml;
 
 /**
  * @Description
