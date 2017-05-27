@@ -22,6 +22,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="bigdata" />
         <module name="dubbo-api" />
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
@@ -52,6 +53,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
+      <module name="bigdata" target="1.5" />
       <module name="com.mq.service" target="1.6" />
       <module name="demon" target="1.5" />
       <module name="dubbo" target="1.5" />

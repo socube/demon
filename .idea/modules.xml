@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/bigdata/bigdata.iml" filepath="$PROJECT_DIR$/bigdata/bigdata.iml" />
       <module fileurl="file://$PROJECT_DIR$/mq/com.mq.service.iml" filepath="$PROJECT_DIR$/mq/com.mq.service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/demon.iml" filepath="$PROJECT_DIR$/.idea/demon.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo/dubbo.iml" filepath="$PROJECT_DIR$/dubbo/dubbo.iml" />
