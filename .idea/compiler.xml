@@ -26,7 +26,6 @@
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
         <module name="redis" />
-        <module name="storm" />
         <module name="web" />
       </profile>
       <profile default="false" name="Annotation profile for com.mq.service" enabled="true">

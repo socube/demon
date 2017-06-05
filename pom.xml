@@ -16,7 +16,6 @@
         <module>netty</module>
         <module>mq</module>
         <module>dubbo</module>
-        <module>storm</module>
         <module>bigdata</module>
     </modules>
 
