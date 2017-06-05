@@ -12,7 +12,7 @@ import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.tuple.Fields;
 
 /**
- * @Description
+ * @Description 计算单词拓扑
  * @Author xuedong.wang
  * @Date 17/5/22.
  */
