@@ -34,7 +34,7 @@ public class WordCountTopology {
         builder.setBolt("Print", new PrintBolt(), 1).shuffleGrouping(
                 "WordCount");
 
-        config.setDebug(false);
+        config.setDebug(true);
 
         //通过是否有参数来控制是否启动集群，或者本地模式执行
         if (args != null && args.length > 0) {
