@@ -35,6 +35,5 @@ public class SetDemon {
     }
 
     public static void main(String[] args) {
-        demon();
     }
 }
