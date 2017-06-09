@@ -32,6 +32,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>1.0.2.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>web</finalName>
@@ -59,6 +64,14 @@
                     <jvmArgs>-Xmx512m -XX:PermSize=128m -XX:MaxPermSize=256m
                         -Dfile.encoding=UTF-8
                     </jvmArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
         </plugins>
