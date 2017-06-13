@@ -2,8 +2,10 @@ package com.collection;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import junit.framework.TestCase;
 
 import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeSet;
 
 /**
@@ -11,7 +13,7 @@ import java.util.TreeSet;
  * @Author xuedong.wang
  * @Date 17/6/8.
  */
-public class SetDemon {
+public class SetDemon extends TestCase{
 
     public static void   demon(){
 
@@ -34,6 +36,9 @@ public class SetDemon {
         System.out.print(sb.toString());
     }
 
-    public static void main(String[] args) {
+
+    public void testSort(){
+        Set sortSet = new TreeSet<Object>();
+
     }
 }
