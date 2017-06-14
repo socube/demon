@@ -118,6 +118,7 @@ public class ThreadPoolDemon extends TestCase {
      */
     public static void createThreadPoll() {
 
+
         BlockingQueue queue = new ArrayBlockingQueue(100);
 
         RejectedExecutionHandler hander = new ThreadPoolExecutor.AbortPolicy();
