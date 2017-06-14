@@ -76,6 +76,7 @@ public class ThreadPoolDemon extends TestCase {
         }, 3, TimeUnit.SECONDS);
     }
 
+
     /**
      * 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
      */
@@ -95,6 +96,7 @@ public class ThreadPoolDemon extends TestCase {
             });
         }
     }
+
 
     /**
      * corePoolSize（线程池的基本大小）：当提交一个任务到线程池时，线程池会创建一个线程来执行任务，即使其他空闲的基本线程能够执行新任务也会创建线程，等到需要执行的任务数大于线程池基本大小时就不再创建。如果调用了线程池的prestartAllCoreThreads方法，线程池会提前创建并启动所有基本线程。
