@@ -27,7 +27,7 @@ public class TestSign extends TestCase {
 
 
     private static String getSign(String params){
-
+        StringBuilder sb = new StringBuilder();
        // MD5Util.getMD5Str(sb.toString()).toLowerCase();
         return null;
     }
