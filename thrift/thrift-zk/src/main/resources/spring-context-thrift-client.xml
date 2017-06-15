@@ -38,7 +38,7 @@
         <property name="idleTime" value="1800000"/>
         <property name="serverAddressProvider">
             <bean class="com.thriftzk.rpc.zookeeper.ThriftServerAddressProviderZookeeper">
-                <property name="service" value="cn.slimsmart.thrift.rpc.demo.EchoSerivce"/>
+                <property name="service" value="com.thriftzk.rpc.demo.EchoSerivce"/>
                 <property name="version" value="1.0.0"/>
                 <property name="zkClient" ref="thriftZookeeper"/>
             </bean>

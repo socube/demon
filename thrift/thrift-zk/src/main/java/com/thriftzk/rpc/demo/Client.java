@@ -26,7 +26,7 @@ public class Client {
 
     public static void spring() {
         try {
-            final ApplicationContext context = new ClassPathXmlApplicationContext("spring-context-thrift-client.xml");
+            final ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-context-thrift-client.xml");
             EchoSerivce.Iface echoSerivce = (EchoSerivce.Iface) context.getBean("echoSerivce");
             System.out.println(echoSerivce.echo("hello--echo"));
             //关闭连接的钩子
