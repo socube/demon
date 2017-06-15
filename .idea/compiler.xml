@@ -26,6 +26,7 @@
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
         <module name="redis" />
+        <module name="thrift-server" />
       </profile>
       <profile default="false" name="Annotation profile for com.mq.service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -62,6 +63,13 @@
         <processorPath useClasspath="true" />
         <module name="web" />
       </profile>
+      <profile default="false" name="Annotation profile for thrift-zk" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="thrift-zk" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
       <module name="bigdata" target="1.6" />
@@ -75,6 +83,9 @@
       <module name="netty" target="1.7" />
       <module name="redis" target="1.5" />
       <module name="storm" target="1.5" />
+      <module name="thrift" target="1.5" />
+      <module name="thrift-server" target="1.5" />
+      <module name="thrift-zk" target="1.7" />
       <module name="web" target="1.6" />
     </bytecodeTargetLevel>
   </component>

@@ -16,6 +16,8 @@
       <set>
         <option value="$PROJECT_DIR$/dubbo-api/pom.xml" />
         <option value="$PROJECT_DIR$/storm/pom.xml" />
+        <option value="$PROJECT_DIR$/thrift-server/pom.xml" />
+        <option value="$PROJECT_DIR$/thrift/pom.xml" />
       </set>
     </option>
   </component>
