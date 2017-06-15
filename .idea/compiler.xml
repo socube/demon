@@ -83,7 +83,7 @@
       <module name="netty" target="1.7" />
       <module name="redis" target="1.5" />
       <module name="storm" target="1.5" />
-      <module name="thrift" target="1.5" />
+      <module name="thrift" target="1.7" />
       <module name="thrift-server" target="1.5" />
       <module name="thrift-zk" target="1.7" />
       <module name="web" target="1.6" />
