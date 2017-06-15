@@ -9,30 +9,31 @@
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"
        default-lazy-init="false">
 
-    <!-- fixedAddress -->
-    <!--
+    <!-- fixedAddress
+
     <bean id="fixedAddressProvider" class="com.thriftzk.rpc.zookeeper.FixedAddressProvider">
-         <property name="service" value="cn.slimsmart.thrift.rpc.demo.EchoSerivce" />
-         <property name="serverAddress" value="192.168.36.215:9001:1,192.168.36.215:9002:2,192.168.36.215:9003:3" />
+         <property name="service" value="com.thriftzk.rpc.demo.EchoSerivce" />
+         <property name="serverAddress" value=":9001:1,192.168.201.218:9002:2,192.168.201.218:9003:3" />
     </bean>
     <bean id="echoSerivce" class="com.thriftzk.rpc.ThriftServiceClientProxyFactory">
         <property name="maxActive" value="5" />
         <property name="idleTime" value="10000" />
         <property name="serverAddressProvider" ref="fixedAddressProvider" />
     </bean>
-   -->
+    -->
 
 
-    <!-- zookeeper   -->
+    <!-- zookeeper-->
     <bean id="thriftZookeeper" class="com.thriftzk.rpc.zookeeper.ZookeeperFactory"
           destroy-method="close">
         <property name="zkHosts"
-                  value="192.168.1.90:2181"/>
-        <property name="namespace" value="cn.slimsmart.thrift.rpc.demo"/>
+                  value="192.168.201.218:2181"/>
+        <property name="namespace" value="com.thriftzk.rpc.demo"/>
         <property name="connectionTimeout" value="3000"/>
         <property name="sessionTimeout" value="3000"/>
         <property name="singleton" value="true"/>
     </bean>
+
     <bean id="echoSerivce" class="com.thriftzk.rpc.ThriftServiceClientProxyFactory" destroy-method="close">
         <property name="maxActive" value="5"/>
         <property name="idleTime" value="1800000"/>
@@ -44,4 +45,5 @@
             </bean>
         </property>
     </bean>
+
 </beans>

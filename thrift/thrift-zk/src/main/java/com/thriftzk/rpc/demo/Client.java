@@ -21,14 +21,14 @@ public class Client {
 
     public static void main(String[] args) {
         //simple();
-        spring();
+       spring();
     }
 
     public static void spring() {
         try {
             final ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-context-thrift-client.xml");
             EchoSerivce.Iface echoSerivce = (EchoSerivce.Iface) context.getBean("echoSerivce");
-            System.out.println(echoSerivce.echo("hello--echo"));
+            System.out.println(echoSerivce.echo("---hello--echo"));
             //关闭连接的钩子
             Runtime.getRuntime().addShutdownHook(new Thread() {
                 public void run() {
@@ -64,7 +64,7 @@ public class Client {
 
     public static void simple() {
         try {
-            TSocket socket = new TSocket("192.168.36.215", 9001);
+            TSocket socket = new TSocket("192.168.201.218", 9001);
             TTransport transport = new TFramedTransport(socket);
             TProtocol protocol = new TBinaryProtocol(transport);
             EchoSerivce.Client client = new EchoSerivce.Client(protocol);

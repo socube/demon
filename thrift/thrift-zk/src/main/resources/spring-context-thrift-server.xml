@@ -13,7 +13,7 @@
     <bean id="thriftZookeeper" class=" com.thriftzk.rpc.zookeeper.ZookeeperFactory"
           destroy-method="close">
         <property name="zkHosts"
-                  value="192.168.1.90:2181"/>
+                  value="192.168.201.218:2181"/>
         <property name="namespace" value="com.thriftzk.rpc.demo"/>
         <property name="connectionTimeout" value="3000"/>
         <property name="sessionTimeout" value="3000"/>
