@@ -70,6 +70,12 @@
         <processorPath useClasspath="true" />
         <module name="thrift-zk" />
       </profile>
+      <profile default="false" name="Annotation profile for thrift-demon" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
       <module name="bigdata" target="1.6" />
@@ -84,6 +90,7 @@
       <module name="redis" target="1.5" />
       <module name="storm" target="1.5" />
       <module name="thrift" target="1.7" />
+      <module name="thrift-demon" target="1.7" />
       <module name="thrift-server" target="1.5" />
       <module name="thrift-zk" target="1.7" />
       <module name="web" target="1.6" />

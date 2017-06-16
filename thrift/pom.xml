@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>thrift-zk</module>
+        <module>../thrift-demon</module>
+        <module>thrift-demon</module>
     </modules>
 
     <dependencies>
