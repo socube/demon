@@ -9,21 +9,20 @@
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"
        default-lazy-init="false">
 
-    <!-- fixedAddress
+    <!-- fixedAddress 10.10.32.196:9001
 
     <bean id="fixedAddressProvider" class="com.thriftzk.rpc.zookeeper.FixedAddressProvider">
-         <property name="service" value="com.thriftzk.rpc.demo.EchoSerivce" />
-         <property name="serverAddress" value=":9001:1,192.168.201.218:9002:2,192.168.201.218:9003:3" />
+        <property name="service" value="com.thriftzk.rpc.demo.EchoSerivce"/>
+        <property name="serverAddress" value="10.10.32.196:9001:1, 10.10.32.196:9000:1, 10.10.32.196:9002:1"/>
     </bean>
     <bean id="echoSerivce" class="com.thriftzk.rpc.ThriftServiceClientProxyFactory">
-        <property name="maxActive" value="5" />
-        <property name="idleTime" value="10000" />
-        <property name="serverAddressProvider" ref="fixedAddressProvider" />
+        <property name="maxActive" value="5"/>
+        <property name="idleTime" value="10000"/>
+        <property name="serverAddressProvider" ref="fixedAddressProvider"/>
     </bean>
     -->
 
-
-    <!-- zookeeper-->
+    <!--zookeeper -->
     <bean id="thriftZookeeper" class="com.thriftzk.rpc.zookeeper.ZookeeperFactory"
           destroy-method="close">
         <property name="zkHosts"
@@ -45,5 +44,6 @@
             </bean>
         </property>
     </bean>
+
 
 </beans>

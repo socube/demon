@@ -21,7 +21,7 @@ public class Client {
 
     public static void main(String[] args) {
         //simple();
-       spring();
+        spring();
     }
 
     public static void spring() {
@@ -64,7 +64,7 @@ public class Client {
 
     public static void simple() {
         try {
-            TSocket socket = new TSocket("192.168.201.218", 9001);
+            TSocket socket = new TSocket("10.10.32.196", 9001); //server ip
             TTransport transport = new TFramedTransport(socket);
             TProtocol protocol = new TBinaryProtocol(transport);
             EchoSerivce.Client client = new EchoSerivce.Client(protocol);
