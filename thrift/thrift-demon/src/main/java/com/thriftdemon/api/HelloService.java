@@ -30,7 +30,6 @@ import javax.annotation.Generated;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 /**
  * @Description
  * @Author xuedong.wang
