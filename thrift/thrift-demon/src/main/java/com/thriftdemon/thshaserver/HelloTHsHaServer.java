@@ -21,6 +21,7 @@ public class HelloTHsHaServer {
     public static final int SERVER_PORT = 8080;
 
     public static void main(String[] args) throws TException {
+
         TProcessor processor = new HelloService.Processor<HelloService.Iface>(new HelloServiceImpl());
         // 传输通道 - 非阻塞方式
         TNonblockingServerSocket serverTransport = new TNonblockingServerSocket(SERVER_PORT);
