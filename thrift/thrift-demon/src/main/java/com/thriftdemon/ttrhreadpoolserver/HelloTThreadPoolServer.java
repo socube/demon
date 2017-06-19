@@ -30,7 +30,7 @@ public class HelloTThreadPoolServer {
 
         // 线程池服务模型，使用标准的阻塞式IO，预先创建一组线程处理请求。
         TServer server = new TThreadPoolServer(tArgs);
-        System.out.println("HelloTThreadPoolServer start....");
+        System.out.println("2-----HelloTThreadPoolServer start....");
         // 启动服务
         server.serve();
     }
