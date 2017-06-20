@@ -79,6 +79,7 @@ public class ThriftServiceClientProxyFactory implements FactoryBean, Initializin
         poolConfig.testOnBorrow = true;
         poolConfig.testOnReturn = false;
         poolConfig.testWhileIdle = false;
+
         pool = new GenericObjectPool<TServiceClient>(clientPool, poolConfig);
         proxyClient = Proxy.newProxyInstance(classLoader, new Class[]{objectClass}, new InvocationHandler() {
             @Override
