@@ -55,4 +55,15 @@ public class DeadlockSample {
             e.printStackTrace();
         }
     }
+
+    /**
+     *Java中的引用类型
+
+     java.lang.ref包能用来声明软引用（soft reference），弱引用（weak reference）和虚引用（phantom reference）。
+
+     垃圾收集器不会回收强引用。
+     在内存不足时才会回收软引用，所以用它实现缓存可以避免内存不足。
+     垃圾收集器将会在下一次垃圾收集时回收弱引用。弱引用能被用来实现特殊的map。java.util.WeakHashMap中的key就是弱引用。
+     虚引用会被立即回收。能被用来跟踪对象被垃圾回收的活动。
+     */
 }
