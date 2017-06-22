@@ -27,6 +27,7 @@ public class ThriftServiceClientProxyFactory implements FactoryBean, Initializin
 
     private Integer maxActive = 32;// 最大活跃连接数
 
+
     // ms,default 3 min,链接空闲时间
     // -1,关闭空闲检测
     private Integer idleTime = 180000;
