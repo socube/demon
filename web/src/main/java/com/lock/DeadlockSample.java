@@ -1,11 +1,14 @@
 package com.lock;
 
+import com.sun.javafx.scene.control.skin.TableCellSkin;
+import junit.framework.TestCase;
+
 /**
  * @Description 在多线程环境中，死锁意味着两个或多个线程一直阻塞，等待其他线程释放锁
  * @Author xuedong.wang
  * @Date 17/6/22.
  */
-public class DeadlockSample {
+public class DeadlockSample extends TestCase {
     private final Object obj1 = new Object();
     private final Object obj2 = new Object();
 
