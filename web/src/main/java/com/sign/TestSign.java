@@ -2,7 +2,13 @@ package com.sign;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.util.UTF8Decoder;
 import junit.framework.TestCase;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Iterator;
+import java.util.TreeSet;
 
 /**
  * @Description
@@ -28,10 +34,38 @@ public class TestSign extends TestCase {
 
     }
 
+    private static String getSign(String params) {
 
-    private static String getSign(String params){
         StringBuilder sb = new StringBuilder();
-        //MD5Util.getMD5Str(sb.toString()).toLowerCase();
+        JSONObject object = JSONObject.parseObject(params);
+        TreeSet set = new TreeSet(object.keySet());
+        Iterator it = set.iterator();
+        String token;
+        while (it.hasNext()) {
+            token = (String) it.next();
+            sb.append(token + "=" + object.get(token));
+            sb.append("&");
+        }
+        sb.append("ilikeuxin");
+        String sign = MD5Util.getMD5Str(sb.toString()).toLowerCase();
+        return new StringBuilder()
+                .append(sign.charAt(20))
+                .append(sign.charAt(17))
+                .append(sign.charAt(0))
+                .append(sign.charAt(6))
+                .append(sign.charAt(1))
+                .append(sign.charAt(5)).toString();
+    }
+
+
+    private static String getEncode(String uri) {
+        try {
+            return URLEncoder.encode(uri, "UTF-8")
+                    // OAuth encodes some characters differently:
+                    .replace(" ", "&");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }
