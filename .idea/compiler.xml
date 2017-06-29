@@ -25,7 +25,6 @@
         <module name="dubbo-api" />
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
-        <module name="redis" />
         <module name="thrift-server" />
       </profile>
       <profile default="false" name="Annotation profile for com.mq.service" enabled="true">
@@ -76,6 +75,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Annotation profile for redis" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="redis" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
       <module name="bigdata" target="1.6" />
@@ -87,7 +93,7 @@
       <module name="dubbo-provider" target="1.5" />
       <module name="dubbo-springboot" target="1.8" />
       <module name="netty" target="1.7" />
-      <module name="redis" target="1.5" />
+      <module name="redis" target="1.6" />
       <module name="storm" target="1.5" />
       <module name="thrift" target="1.7" />
       <module name="thrift-demon" target="1.7" />
