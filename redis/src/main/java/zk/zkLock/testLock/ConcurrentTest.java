@@ -1,4 +1,4 @@
-package zkLock.testLock;
+package zk.zkLock.testLock;
 
 
 import java.util.ArrayList;

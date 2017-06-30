@@ -1,4 +1,4 @@
-package zkLock;
+package zk.zkLock;
 
 import org.apache.zookeeper.KeeperException;
 

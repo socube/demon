@@ -1,4 +1,4 @@
-package zkLock;
+package zk.zkLock;
 
 /**
  * @Description

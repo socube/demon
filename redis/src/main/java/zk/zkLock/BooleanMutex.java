@@ -1,4 +1,4 @@
-package zkLock;
+package zk.zkLock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
