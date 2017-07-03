@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Description
@@ -14,6 +15,9 @@ import java.util.TreeMap;
  */
 public class MapDemon extends TestCase {
 
+    public void testCurrentHashMap(){
+        ConcurrentHashMap map = new ConcurrentHashMap();
+    }
 
     public void testMutableKey() {
         class MyKey {
