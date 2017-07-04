@@ -23,10 +23,4 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
-  <component name="reviewBoardPlugin">
-    <option name="url" value="http://10.3.4.127:8120/reviewboard" />
-    <option name="username" value="xd.wang09" />
-    <option name="password" value="Wangxuedong_1118" />
-    <option name="useRbTools" value="false" />
-  </component>
 </project>

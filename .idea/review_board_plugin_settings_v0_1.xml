@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="reviewBoardPlugin">
+    <option name="url" value="http://10.3.4.127:8120/reviewboard" />
+    <option name="username" value="xd.wang09" />
+    <option name="password" value="Wangxuedong_1118" />
+    <option name="useRbTools" value="false" />
+  </component>
+</project>
