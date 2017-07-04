@@ -7,5 +7,5 @@ import junit.framework.TestCase;
  * @Author xuedong.wang
  * @Date 17/6/8.
  */
-public class ListDemon extends TestCase{
+public class ListDemon extends TestCase {
 }
