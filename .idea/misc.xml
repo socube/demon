@@ -12,15 +12,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/dubbo-api/pom.xml" />
-        <option value="$PROJECT_DIR$/storm/pom.xml" />
-        <option value="$PROJECT_DIR$/thrift-demon/pom.xml" />
-        <option value="$PROJECT_DIR$/thrift-server/pom.xml" />
-        <option value="$PROJECT_DIR$/thrift/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
 </project>

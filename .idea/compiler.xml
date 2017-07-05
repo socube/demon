@@ -1,105 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <resourceExtensions />
-    <wildcardResourcePatterns>
-      <entry name="!?*.java" />
-      <entry name="!?*.form" />
-      <entry name="!?*.class" />
-      <entry name="!?*.groovy" />
-      <entry name="!?*.scala" />
-      <entry name="!?*.flex" />
-      <entry name="!?*.kt" />
-      <entry name="!?*.clj" />
-      <entry name="!?*.aj" />
-    </wildcardResourcePatterns>
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
-        <processorPath useClasspath="true" />
-      </profile>
-      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
+        <module name="bigdata" />
+        <module name="com.mq.service" />
         <module name="dubbo-api" />
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
-        <module name="thrift-server" />
-      </profile>
-      <profile default="false" name="Annotation profile for com.mq.service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="com.mq.service" />
-      </profile>
-      <profile default="false" name="Annotation profile for netty" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="netty" />
-      </profile>
-      <profile default="false" name="Annotation profile for dubbo-springboot" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
         <module name="dubbo-springboot" />
-      </profile>
-      <profile default="false" name="Annotation profile for bigdata" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="bigdata" />
-      </profile>
-      <profile default="false" name="Annotation profile for web" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="web" />
-      </profile>
-      <profile default="false" name="Annotation profile for thrift-zk" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="thrift-zk" />
-      </profile>
-      <profile default="false" name="Annotation profile for thrift-demon" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-      </profile>
-      <profile default="false" name="Annotation profile for redis" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
+        <module name="netty" />
         <module name="redis" />
+        <module name="thrift-demon" />
+        <module name="thrift-server" />
+        <module name="thrift-zipkin" />
+        <module name="thrift-zk" />
+        <module name="web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
-      <module name="bigdata" target="1.6" />
-      <module name="com.mq.service" target="1.6" />
+      <module name="bigdata" target="1.5" />
+      <module name="com.mq.service" target="1.5" />
       <module name="demon" target="1.5" />
       <module name="dubbo" target="1.5" />
       <module name="dubbo-api" target="1.5" />
       <module name="dubbo-consumer" target="1.5" />
       <module name="dubbo-provider" target="1.5" />
-      <module name="dubbo-springboot" target="1.8" />
-      <module name="netty" target="1.7" />
-      <module name="redis" target="1.6" />
+      <module name="dubbo-springboot" target="1.5" />
+      <module name="netty" target="1.5" />
+      <module name="redis" target="1.5" />
       <module name="storm" target="1.5" />
       <module name="thrift" target="1.7" />
       <module name="thrift-demon" target="1.7" />
       <module name="thrift-server" target="1.5" />
+      <module name="thrift-zipkin" target="1.7" />
       <module name="thrift-zk" target="1.7" />
-      <module name="web" target="1.6" />
+      <module name="web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
