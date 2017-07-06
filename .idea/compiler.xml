@@ -12,6 +12,7 @@
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
         <module name="dubbo-springboot" />
+        <module name="mq" />
         <module name="netty" />
         <module name="redis" />
         <module name="thrift-demon" />
@@ -22,23 +23,24 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
-      <module name="bigdata" target="1.5" />
-      <module name="com.mq.service" target="1.5" />
+      <module name="bigdata" target="1.6" />
+      <module name="com.mq.service" target="1.6" />
       <module name="demon" target="1.5" />
       <module name="dubbo" target="1.5" />
       <module name="dubbo-api" target="1.5" />
       <module name="dubbo-consumer" target="1.5" />
       <module name="dubbo-provider" target="1.5" />
-      <module name="dubbo-springboot" target="1.5" />
-      <module name="netty" target="1.5" />
-      <module name="redis" target="1.5" />
+      <module name="dubbo-springboot" target="1.8" />
+      <module name="mq" target="1.6" />
+      <module name="netty" target="1.7" />
+      <module name="redis" target="1.6" />
       <module name="storm" target="1.5" />
       <module name="thrift" target="1.7" />
       <module name="thrift-demon" target="1.7" />
       <module name="thrift-server" target="1.5" />
       <module name="thrift-zipkin" target="1.7" />
       <module name="thrift-zk" target="1.7" />
-      <module name="web" target="1.5" />
+      <module name="web" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
