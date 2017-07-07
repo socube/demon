@@ -1,5 +1,6 @@
-package com.mq.service.rabbitmq.helloword;
+package com.mq.rabbitmq.p2p;
 
+import com.mq.rabbitmq.RabbitMqConfig;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -20,7 +21,7 @@ public class Consumer {
             java.lang.InterruptedException, TimeoutException {
         /* 建立连接 */
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("192.168.201.192");// MQ的IP
+        factory.setHost(RabbitMqConfig.HOST);// MQ的IP
         //factory.setPort(5672);// MQ端口
         //factory.setUsername("guest");// MQ用户名
         //factory.setPassword("guest");// MQ密码

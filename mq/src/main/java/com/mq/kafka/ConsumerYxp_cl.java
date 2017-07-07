@@ -1,4 +1,4 @@
-package com.mq.service.kafka;
+package com.mq.kafka;
 
 /**
  * @Description 测试 yxp_cl 分组

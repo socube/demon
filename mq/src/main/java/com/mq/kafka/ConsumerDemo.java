@@ -1,4 +1,4 @@
-package com.mq.service.kafka;
+package com.mq.kafka;
 
 import java.util.HashMap;
 import java.util.List;

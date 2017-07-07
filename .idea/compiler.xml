@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="bigdata" />
         <module name="com.mq.service" />
+        <module name="com.service.mq" />
         <module name="dubbo-api" />
         <module name="dubbo-consumer" />
         <module name="dubbo-provider" />
@@ -25,6 +26,7 @@
     <bytecodeTargetLevel target="1.6">
       <module name="bigdata" target="1.6" />
       <module name="com.mq.service" target="1.6" />
+      <module name="com.service.mq" target="1.6" />
       <module name="demon" target="1.5" />
       <module name="dubbo" target="1.5" />
       <module name="dubbo-api" target="1.5" />

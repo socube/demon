@@ -1,4 +1,4 @@
-package com.mq.service.kafka;
+package com.mq.kafka;
 
 import kafka.producer.Partitioner;
 import kafka.utils.VerifiableProperties;

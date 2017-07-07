@@ -1,4 +1,4 @@
-package com.mq.service.rocketmq;
+package com.mq.rocketmq;
 
 /**
  * @Description
