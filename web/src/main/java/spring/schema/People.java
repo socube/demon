@@ -1,11 +1,13 @@
 package spring.schema;
 
+import java.io.Serializable;
+
 /**
  * @Description
  * @Author xuedong.wang
  * @Date 17/7/6.
  */
-public class People {
+public class People implements Serializable{
 
     private String id;
     private String name;
@@ -34,5 +36,15 @@ public class People {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("People{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", age=").append(age);
+        sb.append('}');
+        return sb.toString();
     }
 }

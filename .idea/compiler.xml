@@ -24,7 +24,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
-      <module name="bigdata" target="1.6" />
+      <module name="bigdata" target="1.7" />
       <module name="com.mq.service" target="1.6" />
       <module name="com.service.mq" target="1.6" />
       <module name="demon" target="1.5" />
