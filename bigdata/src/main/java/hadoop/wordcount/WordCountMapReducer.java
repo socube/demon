@@ -60,8 +60,9 @@ public class WordCountMapReducer {
 
         conf.setInputFormat(TextInputFormat.class);
         conf.setOutputFormat(TextOutputFormat.class);
-        FileInputFormat.setInputPaths(conf, new Path(args[0]));
-        FileOutputFormat.setOutputPath(conf, new Path(args[1]));
+
+        FileInputFormat.setInputPaths(conf, new Path("/Users/wangxuedong/Downloads/words"));//hdfs://192.168.201.228:9000/words
+        FileOutputFormat.setOutputPath(conf, new Path("/Users/wangxuedong/Downloads/wordcount_out"));//hdfs://192.168.201.228:9000/wordcount_out
 
         JobClient.runJob(conf);
     }
