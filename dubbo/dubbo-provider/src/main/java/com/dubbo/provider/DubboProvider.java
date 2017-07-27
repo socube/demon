@@ -30,9 +30,8 @@ public class DubboProvider {
 
         // 连接注册中心配置
         RegistryConfig registry = new RegistryConfig();
+        registry.setProtocol("zookeeper");
         registry.setAddress("192.168.201.219:2181,192.168.201.220:2181,192.168.201.218:2181");
-        //registry.setUsername("aaa");
-        //registry.setPassword("bbb");
 
         // 服务提供者协议配置
         ProtocolConfig protocol = new ProtocolConfig();
@@ -49,9 +48,15 @@ public class DubboProvider {
         service.setProtocol(protocol); // 多个协议可以用setProtocols()
         service.setInterface(UserService.class);
         service.setRef(xxxService);
-        service.setVersion("1.0.0");
+        service.setVersion("1.0.1");
 
         // 暴露及注册服务
         service.export();
+
+        try {
+            Thread.sleep(Integer.MAX_VALUE);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
