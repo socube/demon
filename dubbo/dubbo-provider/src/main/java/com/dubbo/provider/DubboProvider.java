@@ -22,7 +22,7 @@ public class DubboProvider {
     public static void main(String[] args) {
 
         // 服务实现
-        UserService xxxService = new UserServiceImpl();
+        UserService  userService = new UserServiceImpl();
 
         // 当前应用配置
         ApplicationConfig application = new ApplicationConfig();
@@ -47,8 +47,8 @@ public class DubboProvider {
         service.setRegistry(registry); // 多个注册中心可以用setRegistries()
         service.setProtocol(protocol); // 多个协议可以用setProtocols()
         service.setInterface(UserService.class);
-        service.setRef(xxxService);
-        service.setVersion("1.0.1");
+        service.setRef(userService);
+        service.setVersion("1.0.0");
 
         // 暴露及注册服务
         service.export();
