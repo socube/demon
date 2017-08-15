@@ -15,6 +15,13 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class MapDemon extends TestCase {
 
+
+
+
+
+
+
+
     public void testCurrentHashMap(){
         ConcurrentHashMap map = new ConcurrentHashMap();
     }

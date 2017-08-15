@@ -2,10 +2,12 @@ package com.collection;
 
 import junit.framework.TestCase;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by xd.wang on 16/11/14.
@@ -40,17 +42,22 @@ public class QueueDemon extends TestCase {
      * poll方法用来从队首取元素，如果队列空，则等待一定的时间，当时间期限达到时，如果取到，则返回null；否则返回取得的元素；
      */
     public void testQueue() throws InterruptedException {
-
         arrayBlockingQueue.put(1);
         arrayBlockingQueue.put(2);
+        arrayBlockingQueue.add(3);
         //arrayBlockingQueue.put(3);
         //boolean offer = arrayBlockingQueue.offer(3, 1, TimeUnit.SECONDS);
 
         //System.out.println("offer=" + offer + " size=" + arrayBlockingQueue.size());
         System.out.println(arrayBlockingQueue.take());
         System.out.println(arrayBlockingQueue.size());
-        arrayBlockingQueue.put(3);
-        System.out.println(arrayBlockingQueue.take());
-        System.out.println(arrayBlockingQueue.size());
+//        arrayBlockingQueue.put(3);
+//        System.out.println(arrayBlockingQueue.take());
+//        System.out.println(arrayBlockingQueue.size());
+//
+//        LinkedList linkedList = new LinkedList();
+//
+//        ArrayList arrayList = new ArrayList();
+
     }
 }
