@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import junit.framework.TestCase;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
@@ -14,6 +15,27 @@ import java.util.TreeSet;
  * @Date 17/6/8.
  */
 public class SetDemon extends TestCase{
+
+    //底层hashmap 实现
+    private HashSet<String> hashSet = new HashSet<String>();
+
+
+    public void testSet(){
+        hashSet.add("v");
+        hashSet.add("f");
+        hashSet.add("a");
+
+        Iterator<String> iterator = hashSet.iterator();
+
+        while (iterator.hasNext()){
+            String next = iterator.next();
+
+            System.out.println(next);
+        }
+
+    }
+
+
 
     public static void   demon(){
 

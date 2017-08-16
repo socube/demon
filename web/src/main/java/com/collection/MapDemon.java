@@ -42,6 +42,13 @@ public class MapDemon extends TestCase {
             //System.out.println(entry.getKey());
         }
 
+        Iterator<Map.Entry<String, String>> iterator = hashMap.entrySet().iterator();
+
+        while (iterator.hasNext()){
+            String key = iterator.next().getKey();
+            String value = iterator.next().getValue();
+        }
+
     }
 
     public void testCurrentHashMap() {
