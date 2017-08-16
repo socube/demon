@@ -2,10 +2,7 @@ package com.collection;
 
 import junit.framework.TestCase;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -16,13 +13,38 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MapDemon extends TestCase {
 
 
+    //键不可重复 值可重复 底层哈希表 线程不安全 允许key 为null value 也可以为null 无序  table16
+    private HashMap<String, String> hashMap = new HashMap();
+    //键不可重复 值可重复 底层哈希表 线程安全 key value 都不允许为null
+    private Hashtable<String, String> hashtable = new Hashtable();
+    ///键不可重复 值可重复 底层二叉树 (红黑树)
+    private TreeMap<String, String> treeMap = new TreeMap<String, String>();
+    //hashmap 子类 有序 双向链表
+    private LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<String, String>();
+    //WeakHashMap 是一种改进的 HashMap，它对 key 实行“弱引用”，如果一个 key 不再被外部所引用，那么该 key 可以被 GC 回收
+    private WeakHashMap<String, String> weakHashMap = new WeakHashMap<String, String>();
+    //线程安全 高效table
+    private ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap();
+    //key 可以重复 "＝＝" 判断
+    private IdentityHashMap identityHashMap = new IdentityHashMap();
 
+    private Properties properties = new Properties();
 
+    public void testMap() {
+        String put = hashMap.put("c", "c");
+        String put1 = hashMap.put("c", "f");
+        System.out.println("put=" + put + " put1=" + put1);
+        hashMap.put("a", "a");
 
+        Set<Map.Entry<String, String>> entries = hashMap.entrySet();
 
+        for (Map.Entry entry : entries) {
+            //System.out.println(entry.getKey());
+        }
 
+    }
 
-    public void testCurrentHashMap(){
+    public void testCurrentHashMap() {
         ConcurrentHashMap map = new ConcurrentHashMap();
     }
 
