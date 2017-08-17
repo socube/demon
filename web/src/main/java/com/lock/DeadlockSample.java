@@ -9,6 +9,13 @@ import junit.framework.TestCase;
  * @Date 17/6/22.
  */
 public class DeadlockSample extends TestCase {
+
+
+
+
+
+    private volatile Integer i = 0;
+
     private final Object obj1 = new Object();
     private final Object obj2 = new Object();
 
