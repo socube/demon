@@ -2,7 +2,12 @@ package com.collection;
 
 import junit.framework.TestCase;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.Vector;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
  * @Description
@@ -18,9 +23,12 @@ public class ListDemon extends TestCase {
 
     private LinkedList<String> linkedList = new LinkedList<String>();
 
+    private CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList();
 
+    private CopyOnWriteArraySet<String> copyOnWriteArraySet = new CopyOnWriteArraySet<String>();
 
     public void testList(){
+
         linkedList.add("erer");
         linkedList.add("vfvf");
         linkedList.add(0,"ree");
