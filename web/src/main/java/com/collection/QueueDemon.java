@@ -2,12 +2,10 @@ package com.collection;
 
 import junit.framework.TestCase;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.SynchronousQueue;
 
 /**
  * Created by xd.wang on 16/11/14.
@@ -35,8 +33,10 @@ public class QueueDemon extends TestCase {
     private DelayQueue delayQueue = new DelayQueue();
 
 
+    private SynchronousQueue synchronousQueue  = new SynchronousQueue();
+
     /**
-     * put方法用来向队尾存入元素，如果队列满，则等待；
+     * put方法用来向队尾存入元素，如果列满，则等待；
      * take方法用来从队首取元素，如果队列为空，则等待；
      * offer方法用来向队尾存入元素，如果队列满，则等待一定的时间，当时间期限达到时，如果还没有插入成功，则返回false；否则返回true；
      * poll方法用来从队首取元素，如果队列空，则等待一定的时间，当时间期限达到时，如果取到，则返回null；否则返回取得的元素；
