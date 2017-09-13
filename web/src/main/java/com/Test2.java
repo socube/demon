@@ -13,4 +13,21 @@ public class Test2 {
 
     }
 
+    public static void main(String[] args) {
+        int a = 0;
+
+        System.out.println("返回值"+test(1));
+    }
+
+    public static int test(int a){
+        try {
+            return a + 1;
+        }finally {
+           System.out.println(a=a+2);
+        }
+
+
+    }
+
+
 }
