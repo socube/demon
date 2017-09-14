@@ -13,7 +13,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Worker {
 
-    private final static String QUEUE_NAME = "resume_data_manager";
+    private final static String QUEUE_NAME = "logs";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
