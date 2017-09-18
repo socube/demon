@@ -16,7 +16,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Task {
 
-    private final static String QUEUE_NAME = "task_queue";
+    private final static String QUEUE_NAME = "logs";
 
     private static String getMessage(String[] strings){
         if (strings.length < 1)
