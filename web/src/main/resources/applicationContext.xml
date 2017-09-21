@@ -9,4 +9,6 @@
 
 
     <cutesource:people id="cutesource" name="wangxuedong" age="27"/>
+
+    <bean id="simpleBean" class="spring.bean.SimpleBean"/>
 </beans>
