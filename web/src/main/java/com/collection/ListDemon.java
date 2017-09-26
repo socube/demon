@@ -2,10 +2,7 @@ package com.collection;
 
 import junit.framework.TestCase;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Vector;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -38,5 +35,8 @@ public class ListDemon extends TestCase {
         Collection list  = new ArrayList<String>();
 
 //        Collections.copy();
+
+        Iterator<String> iterator = linkedList.iterator();
+
     }
 }
