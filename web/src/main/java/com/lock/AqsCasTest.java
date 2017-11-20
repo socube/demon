@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class AqsCasTest extends TestCase {
 
-    private AtomicInteger integer = new AtomicInteger();
+
 
     //利用它可以实现类似计数器的功能。比如有一个任务A，它要等待其他4个任务执行完毕之后才能执行
     private final CountDownLatch countDownLatch = new CountDownLatch(2);
@@ -27,6 +27,14 @@ public class AqsCasTest extends TestCase {
     //Semaphore翻译成字面意思为 信号量，Semaphore可以控同时访问的线程个数，通过 acquire() 获取一个许可，如果没有就等待，而 release() 释放一个许可。
     private final Semaphore semaphore = new Semaphore(10);
 
+    private AtomicInteger integer  = new AtomicInteger();
+
+
+
+    public void testAtomicInetger(){
+        integer.set(1);
+        integer.addAndGet(2);
+    }
     /**
      * 1）CountDownLatch和CyclicBarrier都能够实现线程之间的等待，只不过它们侧重点不同：
      * <p>
