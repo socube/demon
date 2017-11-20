@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot/springboot.iml" filepath="$PROJECT_DIR$/springboot/springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud.iml" filepath="$PROJECT_DIR$/springcloud/springcloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/thrift/thrift.iml" filepath="$PROJECT_DIR$/thrift/thrift.iml" />
       <module fileurl="file://$PROJECT_DIR$/thrift/thrift-demon/thrift-demon.iml" filepath="$PROJECT_DIR$/thrift/thrift-demon/thrift-demon.iml" />
       <module fileurl="file://$PROJECT_DIR$/thrift/thrift-zipkin/thrift-zipkin.iml" filepath="$PROJECT_DIR$/thrift/thrift-zipkin/thrift-zipkin.iml" />

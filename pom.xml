@@ -19,6 +19,7 @@
         <module>bigdata</module>
         <module>thrift</module>
         <module>springboot</module>
+        <module>springcloud</module>
     </modules>
 
 
