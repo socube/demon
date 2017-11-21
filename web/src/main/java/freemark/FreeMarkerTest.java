@@ -5,8 +5,10 @@ import freemarker.template.Template;
 
 import java.io.File;
 import java.io.OutputStreamWriter;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * @Description
  * @Author xuedong.wang
@@ -39,6 +41,16 @@ public class FreeMarkerTest {
         //使用Configuration实例加载指定模板
         Template template = cfg.getTemplate("user.ftl");
         //合并处理（模板 + 数据模型）
-        template.process(rootMap, new OutputStreamWriter(System.out));
+        //template.process(rootMap, new OutputStreamWriter(System.out));
+
+
+        StringWriter writer = new StringWriter();
+
+        template.process(rootMap, writer);
+
+        String jsonStr = writer.toString();
+
+        System.out.println("----------->"+jsonStr);
+
     }
 }
