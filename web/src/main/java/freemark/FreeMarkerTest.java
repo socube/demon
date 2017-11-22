@@ -2,9 +2,10 @@ package freemark;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.Resource;
 
 import java.io.File;
-import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +29,9 @@ public class FreeMarkerTest {
     public void init() throws Exception {
         cfg = new Configuration();
         //设置模板文件位置
-        cfg.setDirectoryForTemplateLoading(new File("/template"));//  /Users/wangxuedong/IdeaProjects/github/demon/web/src/main/resources
+        Resource path = new DefaultResourceLoader().getResource("/template");
+        File file = path.getFile();
+        cfg.setDirectoryForTemplateLoading(file);//  /Users/wangxuedong/IdeaProjects/github/demon/web/src/main/resources
     }
 
     //模板 + 数据模型 = 输出
