@@ -28,7 +28,7 @@ public class FreeMarkerTest {
     public void init() throws Exception {
         cfg = new Configuration();
         //设置模板文件位置
-        cfg.setDirectoryForTemplateLoading(new File("/Users/wangxuedong/IdeaProjects/github/demon/web/src/main/resources/template"));
+        cfg.setDirectoryForTemplateLoading(new File("/template"));//  /Users/wangxuedong/IdeaProjects/github/demon/web/src/main/resources
     }
 
     //模板 + 数据模型 = 输出
