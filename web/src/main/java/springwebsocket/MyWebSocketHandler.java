@@ -24,7 +24,6 @@ import org.springframework.web.socket.WebSocketSession;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import io.github.dunwu.spring.websocket.entity.Message;
 /**
  * @Description
  * @Author xuedong.wang
@@ -35,7 +34,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
 
 
     private static final Logger logger = LoggerFactory.getLogger(MyWebSocketHandler.class);
-    private static Map<Long, Set<WebSocketSession>> userSocketSessionMap = new ConcurrentHashMap<>();
+    private static Map<Long, Set<WebSocketSession>> userSocketSessionMap = new ConcurrentHashMap<Long, Set<WebSocketSession>>();
 
     /**
      * 建立连接后
@@ -57,7 +56,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
             }
         }
         if (isNewUser) {
-            Set<WebSocketSession> sessions = new HashSet<>();
+            Set<WebSocketSession> sessions = new HashSet<WebSocketSession>();
             sessions.add(session);
             userSocketSessionMap.put(uid, sessions);
         }

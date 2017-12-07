@@ -9,8 +9,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import io.github.dunwu.spring.websocket.entity.Message;
-import io.github.dunwu.spring.websocket.websocket.MyWebSocketHandler;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +21,6 @@ import org.springframework.web.socket.TextMessage;
 
 import com.google.gson.GsonBuilder;
 
-import io.github.dunwu.spring.websocket.entity.User;
 
 /**
  * @Description
