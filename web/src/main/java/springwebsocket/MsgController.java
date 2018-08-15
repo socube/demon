@@ -34,7 +34,7 @@ public class MsgController {
     @Resource
     MyWebSocketHandler handler;
 
-    Map<Long, User> users = new HashMap<>();
+    Map<Long, User> users = new HashMap<Long, User>();
 
     // 模拟一些数据
     @ModelAttribute

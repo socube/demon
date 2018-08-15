@@ -20,7 +20,7 @@ public class WebSocketConfig {
         return new MyWebSocketHandler();
     }
 
-    @Override
+    //@Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(myHandler(), "/ws").addInterceptors(new HandShake());
         registry.addHandler(myHandler(), "/ws/sockjs").addInterceptors(new HandShake()).withSockJS();
